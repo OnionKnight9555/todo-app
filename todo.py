@@ -9,7 +9,18 @@ while True:
     choice = input("Choose an option [1-3]: ")
 
     if choice == "1":
-        print("You selected: View Tasks")
+        if len(tasks) == 0:
+            task = input("There are no tasks yet, would you like to add one? [Y / N]")
+            if task == "Y":
+                        task = input("Enter your task: ")
+                        tasks.append(task)
+                        print("Task added.")
+            elif task == "N":
+                print("Sounds good.")  
+        else:
+            for i, task in enumerate(tasks):
+                print("Here are your saved tasks.")
+                print (i +1, task)          
     elif choice == "2":
         task = input("Enter your task: ")
         tasks.append(task)
