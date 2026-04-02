@@ -10,16 +10,18 @@ while True:
 
     if choice == "1":
         if len(tasks) == 0:
-            task = input("There are no tasks yet, would you like to add one? [Y / N]")
-            if task == "Y":
+            task = input("There are no tasks yet, would you like to add one? [y / n] ")
+            if task == "y":
                         task = input("Enter your task: ")
                         tasks.append(task)
                         print("Task added.")
-            elif task == "N":
+            elif task == "n":
                 print("Sounds good.")  
+            else:
+                print("Please answer using 'y' or 'n' in lowercase.")
         else:
+            print("Here are your saved tasks:")
             for i, task in enumerate(tasks):
-                print("Here are your saved tasks.")
                 print (i +1, task)          
     elif choice == "2":
         task = input("Enter your task: ")
